@@ -38,3 +38,153 @@
     gap:1.5rem;
     margin-top:2rem;
 }
+
+.phone-container{
+    width:50%;
+    position:relative;
+    padding:1rem;
+}
+
+.iphone{
+    position:absolute;
+    z-index:1;
+    min-width:300px;
+    width:50%;
+    right:6rem;
+    top:-12.4rem;
+}
+
+.gradient{
+    position:absolute;
+    min-width:250px;
+    width:40%;
+    top:-6rem;
+    right:6rem;
+    z-index: 0;
+}
+
+@media only screen and (max-width:1250px){
+    .track-crypto-heading,.real-time-heading{
+        font-size:5rem;
+    }
+
+    .iphone{
+        right:6rem;
+        top:-8rem;
+        width:50%
+    }
+
+    .gradient{
+        position:absolute;
+        min-width:250px;
+        width:40%;
+        top:-2rem;
+        right:6rem;
+        z-index: 0;
+    }
+}
+
+@media only screen and (max-width:929px){
+   .flex-info{
+       flex-direction:column;
+   }
+    .track-crypto-heading,.real-time-heading{
+        font-size:5rem;
+        margin:0;
+        text-align: center;
+    }
+    .left-component{
+        width:100%;
+    }
+
+    .info-text{
+        text-align: center;
+    }
+
+    .btn-flex{
+        justify-content:center;
+    }
+
+    .iphone{
+        right:6rem;
+        top:10rem;
+        width:45%;
+
+    }
+
+    .gradient{
+        top:15rem;
+        right:5rem;
+        width:35%;
+
+    }
+
+    .phone-container{
+        display:block;
+        margin:auto;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .track-crypto-heading,.real-time-heading{
+        font-size:3rem;
+        margin:0;
+        text-align: center;
+    }
+    .left-component{
+        width:100%;
+    }
+
+    .info-text{
+        text-align: center;
+    }
+
+    .btn-flex{
+        justify-content:center;
+    }
+
+    .track-crypto-heading{
+        -webkit-text-stroke-width: 1px;
+    }
+
+    .flex-info{
+        justify-content: center;
+        align-items: center;
+        width:100%;
+    }
+
+    .iphone {
+        top: 10rem;
+        width: 45%;
+        left:-15%;
+    }
+
+    .gradient{
+        top:15rem;
+        left:10%;
+        width:35%;
+    }
+}
+
+/*for ultrawide screens*/
+@media only screen and (min-width: 1450px)
+{
+    .iphone{
+        position:absolute;
+        z-index:1;
+        min-width:300px;
+        width:50%;
+        right:6rem;
+        top:-6.4rem;
+    }
+
+    .gradient{
+        position:absolute;
+        min-width:250px;
+        width:40%;
+        top:-2rem;
+        right:6rem;
+        z-index: 0;
+    }
+
+}

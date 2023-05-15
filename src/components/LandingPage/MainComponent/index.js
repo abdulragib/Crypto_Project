@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css'
 import Button from "../../Common/Button";
+import iphone from "../../../assets/iphone.png"
+import gradient from "../../../assets/gradient.png"
 const MainComponent = () => {
     return (
         <div className="flex-info">
@@ -15,7 +17,10 @@ const MainComponent = () => {
                  </div>
              </div>
 
-            <div>phone</div>
+            <div className="phone-container">
+                <img src={iphone} className='iphone'/>
+                <img src={gradient} className='gradient'/>
+            </div>
         </div>
     );
 };
