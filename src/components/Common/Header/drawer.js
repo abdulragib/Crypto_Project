@@ -29,7 +29,7 @@ export default function TemporaryDrawer() {
                                 <p className="link">Watchlist</p>
                             </Link>
                             <Link to="/dashboard">
-                                <Button text={"Dashboard"} onClick={()=>console.log("Btn Clicked")}/>
+                                <p className="link">Dashboard</p>
                             </Link>
                         </div>
                     </Drawer>
