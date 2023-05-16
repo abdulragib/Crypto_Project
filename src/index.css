@@ -44,3 +44,12 @@ a{
   color:var(--white);
   text-decoration: none;
 }
+
+/*Disable image dragging*/
+img{
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -khtmlt-user-drag: none;
+  -o-user-drag: none;
+}
