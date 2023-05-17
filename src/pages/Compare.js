@@ -1,6 +1,6 @@
 const Compare = () => {
     return (
-        <></>
+        <>Compare</>
     )
 }
 
