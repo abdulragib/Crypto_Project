@@ -8,6 +8,7 @@ import {convertNumber} from "../../../functions/convertNumber";
 const List = ({coin}) => {
     return (
         <tr className="list-row">
+
             <Tooltip title="Coin Logo">
                 <td className="td-image">
                     <img src={coin.image} className="coin-logo" alt=""/>

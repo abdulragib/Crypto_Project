@@ -40,14 +40,14 @@ const theme=createTheme({
                         <Tab label="Grid" value="grid" sx={style}/>
                         <Tab label="List" value="list" sx={style}/>
                     </TabList>
-                <TabPanel value="grid">
+                <TabPanel value="grid" variant="fullWidth">
                     <div className="grid-flex">
                         {coins.map((coin,i)=>{
                         return <Grid coin={coin} key={i}/>
                         })}
                     </div>
                 </TabPanel>
-                <TabPanel value="list">
+                <TabPanel value="list" variant="fullWidth">
                     <table className="list-table">
                         <tbody class="list-body">
                             {coins.map((coin,i)=>{
