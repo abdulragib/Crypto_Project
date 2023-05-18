@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -15,49 +15,65 @@ function Tabs({coins}) {
         setValue(newValue);
     };
 
-const style={
-    color:"var(--white)",
-    width:"50vw",
-    fontSize:"1.2rem",
-    fontWeight:600,
-    fontFamily:"Inter",
-    textTransform:"capitalize",
-}
-
-const theme=createTheme({
-    palette:{
-        primary:{
-            main:"#3a80e9"
-        }
+    const style = {
+        color: "var(--white)",
+        width: "50vw",
+        fontSize: "1.2rem",
+        fontWeight: 600,
+        fontFamily: "Inter",
+        textTransform: "capitalize",
     }
-})
+
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: "#3a80e9"
+            }
+        }
+    })
 
     return (
         <ThemeProvider theme={theme}>
-        <div style={{color:"var(--white)"}}>
-            <TabContext value={value}>
-                    <TabList onChange={handleChange} variant="fullWidth" >
+            <div style={{color: "var(--white)"}}>
+                <TabContext value={value}>
+                    <TabList onChange={handleChange} variant="fullWidth">
                         <Tab label="Grid" value="grid" sx={style}/>
                         <Tab label="List" value="list" sx={style}/>
                     </TabList>
-                <TabPanel value="grid" variant="fullWidth">
-                    <div className="grid-flex">
-                        {coins.map((coin,i)=>{
-                        return <Grid coin={coin} key={i}/>
-                        })}
-                    </div>
-                </TabPanel>
-                <TabPanel value="list" variant="fullWidth">
-                    <table className="list-table">
-                        <tbody class="list-body">
-                            {coins.map((coin,i)=>{
+                    <TabPanel value="grid" variant="fullWidth">
+                        <div className="grid-flex">
+                            {coins.length === 0 ? (
+                                    <div className="no-item">
+                                        <h3 style={{color: "var(--white)"}}>
+                                            No Items Found
+                                        </h3>
+                                        <button className='btn' onClick={() => window.location.reload()}>Clear Search</button>
+                                    </div> )
+                                : (
+                                 coins.map((coin, i) => {
+                                return <Grid coin={coin} key={i}/>
+                            }))}
+                        </div>
+                    </TabPanel>
+                    <TabPanel value="list" variant="fullWidth">
+                        <table className="list-table">
+                            <tbody className="list-body">
+                             {coins.length === 0 ? (
+                                 <div className="no-item">
+                                    <h3 style={{color: "var(--white)"}}>
+                                        No Items Found
+                                    </h3>
+                                    <button className='btn' onClick={() => window.location.reload()}>Clear Search</button>
+                                 </div> )
+                                 : (
+                                coins.map((coin, i) => {
                                 return <List coin={coin} key={i}/>
-                            })}
-                        </tbody>
-                    </table>
-                </TabPanel>
-            </TabContext>
-        </div>
+                              }))}
+                            </tbody>
+                        </table>
+                    </TabPanel>
+                </TabContext>
+            </div>
         </ThemeProvider>
     );
 }
