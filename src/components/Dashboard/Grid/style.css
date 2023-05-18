@@ -1,8 +1,10 @@
 .grid-container{
     width:300px;
+    height:auto;
     background-color: var(--darkgrey);
     border:2px solid var(--darkgrey);
     border-radius:0.75rem;
+    cursor:pointer;
 }
 
 .grid-container:hover{
@@ -66,13 +68,14 @@
     font-weight:600;
     font-size:1.1rem;
     color:var(--green);
+    min-width:64px;
 }
 
 .icon-chip{
     border:2px solid var(--green);
     border-radius:50%;
-    height:2.3rem;
-    width:2.3rem;
+    height:2.3rem!important;
+    width:2.3rem!important;
     display:flex;
     justify-content: center;
     align-items: center;
