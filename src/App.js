@@ -7,18 +7,19 @@ import Compare from "./pages/Compare";
 import Watchlist from "./pages/Watchlist";
 
 function App() {
-  return (
-    <div className="App">
-         <BrowserRouter>
-             <Routes>
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/dashboard" element={<Dashboard/>}/>
                     <Route path="/coin/:id" element={<Coin/>}/>
                     <Route path="/compare" element={<Compare/>}/>
                     <Route path="/watchlist" element={<Watchlist/>}/>
-             </Routes>
-         </BrowserRouter>
-    </div>
-  );
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
+
 export default App;

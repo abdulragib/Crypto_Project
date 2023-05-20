@@ -42,35 +42,57 @@ function Tabs({coins}) {
                     </TabList>
                     <TabPanel value="grid" variant="fullWidth">
                         <div className="grid-flex">
-                            {coins.length === 0 ? (
-                                    <div className="no-item">
-                                        <h3 style={{color: "var(--white)"}}>
-                                            No Items Found
+                            {/* For Api Error */}
+                            {coins.includes("Api Error") ? (
+                                <div className="no-item">
+                                    <h3 style={{color: "var(--white)",textAlign:"center"}}>
+                                        Network Issue
+                                        <h3>
+                                            Please Try Again Later
                                         </h3>
-                                        <button className='btn' onClick={() => window.location.reload()}>Clear Search</button>
-                                    </div> )
-                                : (
-                                 coins.map((coin, i) => {
-                                return <Grid coin={coin} key={i}/>
-                            }))}
-                        </div>
-                    </TabPanel>
-                    <TabPanel value="list" variant="fullWidth">
-                        <table className="list-table">
-                            <tbody className="list-body">
-                             {coins.length === 0 ? (
-                                 <div className="no-item">
+                                    </h3>
+
+                                </div>
+                            ) : coins.length === 0 ?
+                                (<div className="no-item"> {/* for filtered coin */}
                                     <h3 style={{color: "var(--white)"}}>
                                         No Items Found
                                     </h3>
-                                    <button className='btn' onClick={() => window.location.reload()}>Clear Search</button>
-                                 </div> )
-                                 : (
+                                    <button className='btn' onClick={() => window.location.reload()}>
+                                        Clear Search
+                                    </button>
+                                </div>) :
+                                (
+                                    coins.map((coin, i) => {
+                                        return <Grid coin={coin} key={i}/>
+                                    }))}
+                        </div>
+                    </TabPanel>
+                    <TabPanel value="list" variant="fullWidth">
+                        {/* For Api Error */}
+                        {coins.includes("Api Error") ? (
+                            <div className="no-item">
+                                <h3 style={{color: "var(--white)",textAlign:"center"}}>
+                                    Network Issue
+                                    <h3>
+                                        Please Try Again Later
+                                    </h3>
+                                </h3>
+
+                            </div>
+                        ) : coins.length === 0 ?
+                            (<div className="no-item"> {/* for filtered coin */}
+                                <h3 style={{color: "var(--white)"}}>
+                                    No Items Found
+                                </h3>
+                                <button className='btn' onClick={() => window.location.reload()}>
+                                    Clear Search
+                                </button>
+                            </div>) :
+                            (
                                 coins.map((coin, i) => {
-                                return <List coin={coin} key={i}/>
-                              }))}
-                            </tbody>
-                        </table>
+                                    return <List coin={coin} key={i}/>
+                                }))}
                     </TabPanel>
                 </TabContext>
             </div>

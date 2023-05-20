@@ -30,9 +30,9 @@ const Coin = () => {
             <Header/>
             {isLoading ? <Loader/> :
                 <>
-                           <div className="grey-wrapper">
-                              <List coin={coinData}/>
-                           </div>
+                    <div className="grey-wrapper">
+                        <List coin={coinData}/>
+                    </div>
                     <CoinInfo heading={coinData.name} desc={coinData.desc}/>
                 </>
             }
@@ -40,8 +40,8 @@ const Coin = () => {
     )
 }
 
-const style={
-    display:"block",
+const style = {
+    display: "block",
 }
 
 export default Coin
