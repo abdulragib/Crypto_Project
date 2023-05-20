@@ -7,6 +7,8 @@ import {convertNumber} from "../../../functions/convertNumber";
 
 const List = ({coin}) => {
     return (
+        <table className="list-tbody">
+            <tbody className="list-tbody">
         <tr className="list-row">
 
             <Tooltip title="Coin Logo">
@@ -59,6 +61,8 @@ const List = ({coin}) => {
                 </td>
             </Tooltip>
         </tr>
+            </tbody>
+        </table>
     )
 }
 

@@ -5,6 +5,7 @@ import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
 import {coinObject} from "../functions/coinObject";
 import List from "../components/Dashboard/List";
+import CoinInfo from "../components/Coin/CoinInfo";
 
 const Coin = () => {
     const {id} = useParams();
@@ -29,14 +30,12 @@ const Coin = () => {
             <Header/>
             {isLoading ? <Loader/> :
                 <>
-                    <div>
-                        <tbody className="list-body" style={style}>
                            <div className="grey-wrapper">
                               <List coin={coinData}/>
                            </div>
-                        </tbody>
-                    </div>
-                </>}
+                    <CoinInfo heading={coinData.name} desc={coinData.desc}/>
+                </>
+            }
         </div>
     )
 }
