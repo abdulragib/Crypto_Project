@@ -7,9 +7,7 @@
     color:var(--grey) ;
     background-color:var(--darkgrey);
     width:80%;
-    margin:1rem;
-    margin-left:auto;
-    margin-right:auto;
+    margin: 1rem auto;
     border-radius:3rem;
     font-size:1.2rem;
 }
@@ -25,4 +23,12 @@
 
 .search-flex input:focus{
     outline:none;
+}
+
+@media screen and (max-width: 800px){
+    .search-flex{
+        width:90%;
+        margin-left:1rem;
+        justify-content: center !important;
+    }
 }

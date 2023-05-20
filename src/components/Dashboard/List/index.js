@@ -9,10 +9,9 @@ import {Link} from "react-router-dom";
 const List = ({coin}) => {
     return (
         <Link to={`/coin/${coin.id}`}>
-            <table className="list-tbody">
-                <tbody className="list-tbody">
-                <tr className="list-row">
-
+            <table className="list-t-body">
+                <tbody className="list-b-body">
+                <tr className="list-row" >
                     <Tooltip title="Coin Logo">
                         <td className="td-image">
                             <img src={coin.image} className="coin-logo" alt=""/>
@@ -50,6 +49,16 @@ const List = ({coin}) => {
                             <h3 className="coin-price td-center-align"
                                 style={{color: coin.price_change_percentage_24h > 0 ? "var(--green)" : "var(--red)"}}>
                                 ${coin.current_price.toLocaleString()}
+                            </h3>
+
+                            <h3 className="coin-price td-center-align mobile-price"
+                                style={{color: coin.price_change_percentage_24h > 0 ? "var(--green)" : "var(--red)"}}>
+                                $
+                                {convertNumber(
+                                    coin.current_price < 1
+                                        ? parseFloat(coin.current_price).toFixed(3)
+                                        : parseInt(coin.current_price)
+                                )}
                             </h3>
                         </td>
                     </Tooltip>
