@@ -6,6 +6,8 @@ import Loader from "../components/Common/Loader";
 import {coinObject} from "../functions/coinObject";
 import List from "../components/Dashboard/List";
 import CoinInfo from "../components/Coin/CoinInfo";
+import getCoinData from "../functions/getCoinData";
+import getCoinPrices from "../functions/getCoinPrices";
 
 const Coin = () => {
     const {id} = useParams();
@@ -14,26 +16,24 @@ const Coin = () => {
     const [days, setDays] = useState(30);
     useEffect(() => {
         if (id) {
-            axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
-                .then((res) => {
-                    console.log("Response->", res);
-                    coinObject(setCoinData, res.data);
-                    setIsLoading(false)
-                })
-                .catch((err) => {
-                    console.log("Error>>", err);
-                    setIsLoading(false)
-                })
-
-            axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`)
-                .then((res) => {
-                        console.log("prices->", res.data.prices);
-                }).catch((err) => {
-                console.log("Error>>", err);
-                setIsLoading(false)
-            })
+           getData()
         }
     }, [id]);
+
+    async function getData(){
+        const data = await getCoinData(id);
+
+        if(data){
+           coinObject(setCoinData,data);
+           const prices = await getCoinPrices(id,days);
+
+           if(prices.length>0)
+           {
+               console.log("Got Prices from API");
+               setIsLoading(false);
+           }
+        }
+    }
     return (
         <div>
             <Header/>
