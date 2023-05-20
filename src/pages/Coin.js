@@ -11,18 +11,27 @@ const Coin = () => {
     const {id} = useParams();
     const [coinData, setCoinData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [days, setDays] = useState(30);
     useEffect(() => {
         if (id) {
             axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
                 .then((res) => {
                     console.log("Response->", res);
-                    coinObject(setCoinData, res.data)
-                    setIsLoading(false);
+                    coinObject(setCoinData, res.data);
+                    setIsLoading(false)
                 })
                 .catch((err) => {
                     console.log("Error>>", err);
-                    setIsLoading(false);
+                    setIsLoading(false)
                 })
+
+            axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`)
+                .then((res) => {
+                        console.log("prices->", res.data.prices);
+                }).catch((err) => {
+                console.log("Error>>", err);
+                setIsLoading(false)
+            })
         }
     }, [id]);
     return (
@@ -38,10 +47,6 @@ const Coin = () => {
             }
         </div>
     )
-}
-
-const style = {
-    display: "block",
 }
 
 export default Coin

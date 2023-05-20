@@ -47,9 +47,9 @@ function Tabs({coins}) {
                                 <div className="no-item">
                                     <h3 style={{color: "var(--white)",textAlign:"center"}}>
                                         Network Issue
-                                        <h3>
+                                        <div style={{marginTop:"1rem",height:"auto"}}>
                                             Please Try Again Later
-                                        </h3>
+                                        </div>
                                     </h3>
 
                                 </div>
@@ -64,7 +64,10 @@ function Tabs({coins}) {
                                 </div>) :
                                 (
                                     coins.map((coin, i) => {
-                                        return <Grid coin={coin} key={i}/>
+                                        if(coin)
+                                        {
+                                            return <Grid coin={coin} key={i}/>
+                                        }
                                     }))}
                         </div>
                     </TabPanel>
@@ -74,9 +77,9 @@ function Tabs({coins}) {
                             <div className="no-item">
                                 <h3 style={{color: "var(--white)",textAlign:"center"}}>
                                     Network Issue
-                                    <h3>
+                                    <div style={{marginTop:"1rem",height:"auto"}}>
                                         Please Try Again Later
-                                    </h3>
+                                    </div>
                                 </h3>
 
                             </div>
@@ -91,7 +94,10 @@ function Tabs({coins}) {
                             </div>) :
                             (
                                 coins.map((coin, i) => {
-                                    return <List coin={coin} key={i}/>
+                                   if(coin)
+                                   {
+                                        return <List coin={coin} key={i}/>
+                                   }
                                 }))}
                     </TabPanel>
                 </TabContext>
