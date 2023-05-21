@@ -8,12 +8,13 @@ import CoinInfo from "../components/Coin/CoinInfo";
 import getCoinData from "../functions/getCoinData";
 import getCoinPrices from "../functions/getCoinPrices";
 import LineChart from "../components/Coin/LineChart";
+import {convertDate} from "../functions/convertData";
 
 const Coin = () => {
     const {id} = useParams();
     const [coinData, setCoinData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const [days, setDays] = useState(30);
+    const [days, setDays] = useState(60);
     const [chartData, setChartData] = useState({});
     useEffect(() => {
         if (id) {
@@ -32,12 +33,16 @@ const Coin = () => {
                 console.log("Got Prices from API");
 
                 setChartData({
-                    labels: ["Mon","Tue","Wed","Thur","Fri"],
+                    labels: prices.map((price)=> convertDate(price[0])),
                     datasets: [{
                         label:"First Data Set",
-                        data: [65, 59, 80, 81, 56],
-                        backgroundColor: "transparent",
+                        data: prices.map((price)=> (price[1])),
+                        backgroundColor: "rgba(58, 128, 233, 0.1)",
                         borderColor: "#3a80e9",
+                        tension:0.25,
+                        fill:true,
+                        borderWidth:2,
+                        pointRadius:0,
                     }]
                 });
 
