@@ -17,44 +17,22 @@
     font-size:1.2rem;
 }
 
-.list-table{
-    width:90%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-}
 
-.list-body{
-    display:block;
-}
 
-@media only screen and (max-width:1200px){
-    .list-table{
-        width:95%;
-    }
-}
+
 
 @media only screen and (max-width:800px){
-    .list-table{
-        width:100% !important;
-    }
 
-    .list-row {
-        gap: 1rem !important;
-        margin: 0.3rem !important;
-        padding: 0.3rem !important;
-    }
-
-    .css-13xfq8m-MuiTabPanel-root{
-        width:100% !important;
+    .grid-flex{
+        width: 100% !important;
     }
 
     .list-table{
         display:flex;
         justify-content: center;
-
     }
-
-
-
+    .tabPanel{
+        padding:0.2rem !important;
+        width:100% !important;
+    }
 }

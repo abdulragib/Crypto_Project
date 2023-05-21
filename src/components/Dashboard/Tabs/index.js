@@ -40,7 +40,7 @@ function Tabs({coins}) {
                         <Tab label="Grid" value="grid" sx={style}/>
                         <Tab label="List" value="list" sx={style}/>
                     </TabList>
-                    <TabPanel value="grid" variant="fullWidth">
+                    <TabPanel value="grid" variant="fullWidth" className="tabPanel">
                         <div className="grid-flex">
                             {/* For Api Error */}
                             {coins.includes("Api Error") ? (
@@ -51,7 +51,6 @@ function Tabs({coins}) {
                                             Please Try Again Later
                                         </div>
                                     </h3>
-
                                 </div>
                             ) : coins.length === 0 ?
                                 (<div className="no-item"> {/* for filtered coin */}
@@ -71,7 +70,7 @@ function Tabs({coins}) {
                                     }))}
                         </div>
                     </TabPanel>
-                    <TabPanel value="list" variant="fullWidth">
+                    <TabPanel value="list" variant="fullWidth" className="tabPanel">
                         {/* For Api Error */}
                         {coins.includes("Api Error") ? (
                             <div className="no-item">
