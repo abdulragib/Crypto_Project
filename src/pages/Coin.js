@@ -10,6 +10,7 @@ import getCoinPrices from "../functions/getCoinPrices";
 import LineChart from "../components/Coin/LineChart";
 import SelectDays from "../components/Coin/SelectDays";
 import {settingChartData} from "../functions/settingChartData";
+import PriceType from "../components/Coin/PriceType";
 
 const Coin = () => {
     const {id} = useParams();
@@ -17,6 +18,8 @@ const Coin = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [days, setDays] = useState(60);
     const [chartData, setChartData] = useState({});
+    const [priceType, setPriceType] = useState('prices');
+
     useEffect(() => {
         if (id) {
             getData()
@@ -28,7 +31,7 @@ const Coin = () => {
         const data = await getCoinData(id);
         if (data) {
             coinObject(setCoinData, data); //For Coin Obj being passed in the List
-            const prices = await getCoinPrices(id, days);
+            const prices = await getCoinPrices(id, days,priceType);
             if (prices) {
                 settingChartData(setChartData, prices, data);
                 setIsLoading(false);
@@ -39,7 +42,17 @@ const Coin = () => {
     const handleDaysChange = async (event) => {
         setIsLoading(true);
         setDays(event.target.value);
-        const prices = await getCoinPrices(id, event.target.value);
+        const prices = await getCoinPrices(id, event.target.value, priceType);
+        if (prices.length > 0) {
+            settingChartData(setChartData, prices)
+            setIsLoading(false);
+        }
+    };
+
+    const handlePriceTypeChange = async (event, newType) => {
+        setIsLoading(true);
+        setPriceType(newType);
+        const prices = await getCoinPrices(id, days, newType);
         if (prices.length > 0) {
             settingChartData(setChartData, prices)
             setIsLoading(false);
@@ -51,12 +64,13 @@ const Coin = () => {
             <Header/>
             {isLoading ? <Loader/> :
                 <>
-                    <div className="grey-wrapper" style={{padding:"0rem 1rem"}}>
+                    <div className="grey-wrapper" style={{padding: "0rem 1rem"}}>
                         <List coin={coinData}/>
                     </div>
                     <div className="grey-wrapper">
                         <SelectDays days={days} handleDaysChange={handleDaysChange}/>
-                        <LineChart chartData={chartData}/>
+                        <PriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
+                        <LineChart chartData={chartData} priceType={priceType}/>
                     </div>
                     <CoinInfo heading={coinData.name} desc={coinData.desc}/>
                 </>

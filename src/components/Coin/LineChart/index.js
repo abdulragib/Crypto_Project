@@ -1,8 +1,20 @@
 import React from 'react';
 import {Line} from "react-chartjs-2";
-import {CategoryScale, Chart as ChartJs, Legend, LinearScale, LineElement, Title, Tooltip,PointElement,Filler} from 'chart.js'; //Don't get rid of this
+import {convertNumber} from "../../../functions/convertNumber";
+import {
+    CategoryScale,
+    Chart as ChartJs,
+    Filler,
+    Legend,
+    LinearScale,
+    LineElement,
+    PointElement,
+    Title,
+    Tooltip
+} from 'chart.js';
+
 ChartJs.register(
-    Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale,PointElement,Filler
+    Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement, Filler
 )
 
 const LineChart = ({chartData, priceType, multiAxis}) => {
@@ -17,6 +29,20 @@ const LineChart = ({chartData, priceType, multiAxis}) => {
         interaction: {
             mode: "index",
             intersect: false,
+        },
+
+        scales: {
+            y: {
+                ticks: {
+                    callback: function (value, index, ticks) {
+                        if (priceType === 'prices') {
+                            return '$' + value.toLocaleString();
+                        } else {
+                            return "$" + convertNumber(value);
+                        }
+                    }
+                }
+            }
         }
     };
     return <Line data={chartData} options={options}/>
