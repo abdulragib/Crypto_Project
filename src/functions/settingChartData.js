@@ -1,8 +1,7 @@
 import {convertDate} from "./convertData";
 
 export const settingChartData=(setChartData,prices1,prices2)=>{
-
-    if(prices2){
+    if(Array.isArray(prices2)){
         setChartData({
             labels: prices1.map((price)=> convertDate(price[0])),
             datasets: [{
@@ -36,7 +35,7 @@ export const settingChartData=(setChartData,prices1,prices2)=>{
                 fill:false,
                 borderWidth:2,
                 pointRadius:0,
-                yAxisId:"crypto1"
+                yAxisID:"crypto1"
             }]
         });
     }

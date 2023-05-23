@@ -32,7 +32,7 @@ const Dashboard = () => {
 
     const getData = async() => {
         const myCoins=await get100Coins();
-        if(myCoins)
+        if(myCoins.length>0)
         {
             setCoins(myCoins);
             setPaginatedCoins(myCoins.slice(0, 10));
