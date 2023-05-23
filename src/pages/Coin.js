@@ -10,7 +10,7 @@ import getCoinPrices from "../functions/getCoinPrices";
 import LineChart from "../components/Coin/LineChart";
 import SelectDays from "../components/Coin/SelectDays";
 import {settingChartData} from "../functions/settingChartData";
-import PriceType from "../components/Coin/PriceType";
+import TogglePriceType from "../components/Coin/PriceType";
 
 const Coin = () => {
     const {id} = useParams();
@@ -31,7 +31,7 @@ const Coin = () => {
         const data = await getCoinData(id);
         if (data) {
             coinObject(setCoinData, data); //For Coin Obj being passed in the List
-            const prices = await getCoinPrices(id, days,priceType);
+            const prices = await getCoinPrices(id, days, priceType);
             if (prices) {
                 settingChartData(setChartData, prices, data);
                 setIsLoading(false);
@@ -69,7 +69,7 @@ const Coin = () => {
                     </div>
                     <div className="grey-wrapper">
                         <SelectDays days={days} handleDaysChange={handleDaysChange}/>
-                        <PriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
+                        <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
                         <LineChart chartData={chartData} priceType={priceType}/>
                     </div>
                     <CoinInfo heading={coinData.name} desc={coinData.desc}/>

@@ -4,7 +4,7 @@ import axios from "axios";
 const getCoinData = (id) => {
     const myData=axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
         .then((res) => {
-            console.log("Response->", res);
+            console.log("Response getCoinData->", res.data);
             return res.data
         })
         .catch((err) => {
