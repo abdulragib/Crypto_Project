@@ -45,7 +45,7 @@ const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
 
     return (
         <div className="coins-flex">
-            {apiError === false ? (
+            {apiError===false || allCoins?.length> 0? (
                 <>
                     <p>Crypto 1</p>
                     <Select
@@ -54,7 +54,7 @@ const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
                         label="Crypto 1"
                         onChange={(event) => handleCoinChange(event, true)}
                     >
-                        {allCoins.filter((item) => item.id != crypto2).map((coin, key) => <MenuItem key={key}
+                        {allCoins?.filter((item) => item.id != crypto2).map((coin, key) => <MenuItem key={key}
                                                                                                     value={coin.id}>{coin.name}</MenuItem>)}
                     </Select>
 
@@ -65,17 +65,11 @@ const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
                         label="Crypto 2"
                         onChange={(event) => handleCoinChange(event, false)}
                     >
-                        {allCoins.filter((item) => item.id != crypto1).map((coin, key) => <MenuItem key={key}
+                        {allCoins?.filter((item) => item.id != crypto1).map((coin, key) => <MenuItem key={key}
                                                                                                     value={coin.id}>{coin.name}</MenuItem>)}
                     </Select>
                 </>
-            ) : (
-                <div className="api-error">
-                    <p>There was an error fetching the data. Please try again later.</p>
-                </div>
-            )}
-
-            {apiError === false ? null : <Loader />}
+            ) : null}
         </div>
     );
 };

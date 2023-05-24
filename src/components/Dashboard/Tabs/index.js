@@ -43,7 +43,7 @@ function Tabs({coins,isWatchlistPage}) {
                     <TabPanel value="grid" variant="fullWidth" className="tabPanel">
                         <div className="grid-flex">
                             {/* For Api Error */}
-                            {coins.includes("Api Error") ? (
+                            {coins?.includes("Api Error") ? (
                                 <div className="no-item">
                                     <h3 style={{color: "var(--white)", textAlign: "center"}}>
                                         Network Issue
@@ -52,7 +52,7 @@ function Tabs({coins,isWatchlistPage}) {
                                         </div>
                                     </h3>
                                 </div>
-                            ) : coins.length === 0 ?
+                            ) : coins?.length === 0 ?
                                 (<div className="no-item"> {/* for filtered coin */}
                                     <h3 style={{color: "var(--white)"}}>
                                         No Items Found
@@ -62,7 +62,7 @@ function Tabs({coins,isWatchlistPage}) {
                                     </button>
                                 </div>) :
                                 (
-                                    coins.map((coin, i) => {
+                                    coins?.map((coin, i) => {
                                         if (coin) {
                                             return <Grid coin={coin} key={i}
                                                          delay={(i % 10) * 0.1}
@@ -73,7 +73,7 @@ function Tabs({coins,isWatchlistPage}) {
                     </TabPanel>
                     <TabPanel value="list" variant="fullWidth" className="tabPanel">
                         {/* For Api Error */}
-                        {coins.includes("Api Error") ? (
+                        {coins?.includes("Api Error") ? (
                             <div className="no-item">
                                 <h3 style={{color: "var(--white)", textAlign: "center"}}>
                                     Network Issue
@@ -83,7 +83,7 @@ function Tabs({coins,isWatchlistPage}) {
                                 </h3>
 
                             </div>
-                        ) : coins.length === 0 ?
+                        ) : coins?.length === 0 ?
                             (<div className="no-item"> {/* for filtered coin */}
                                 <h3 style={{color: "var(--white)"}}>
                                     No Items Found
@@ -93,7 +93,7 @@ function Tabs({coins,isWatchlistPage}) {
                                 </button>
                             </div>) :
                             (
-                                coins.map((coin, i) => {
+                                coins?.map((coin, i) => {
                                     if (coin) {
                                         return <List
                                             coin={coin} key={i}

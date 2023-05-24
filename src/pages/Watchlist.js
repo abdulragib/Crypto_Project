@@ -4,32 +4,33 @@ import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
 import Tabs from "../components/Dashboard/Tabs";
 import { get100Coins } from "../functions/get100Coins";
-
 function Watchlist() {
     const coins = JSON.parse(localStorage.getItem("watchlist"));
     const [myWatchlist, setMyWatchlist] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getData();
     }, []);
 
     const getData = async () => {
-        setLoading(true);
-        const allCoins = await get100Coins();
-        if (coins) {
-            setMyWatchlist(allCoins.filter((item) => coins.includes(item.id)));
+        setLoading(true)
+        try {
+            const allCoins = await get100Coins();
+            if (coins) {
+                setMyWatchlist(allCoins?.filter((item) => coins.includes(item.id)));
+            }
+        } catch (error) {
+            console.log(error)
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     return (
         <div>
-            {loading || !coins ? (
-                <Loader />
-            ) : (
+            { (
                 <div style={{ minHeight: "90vh" }}>
-                    {myWatchlist?.length == 0 || !coins ? (
+                    {myWatchlist?.length === 0 || !coins ? (
                         <div>
                             <Header />
                             <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
@@ -45,6 +46,8 @@ function Watchlist() {
                         <div style={{ height: "95vh" }}>
                             <Header />
                             <Tabs coins={myWatchlist} isWatchlistPage={true} />
+                            {loading || !coins ? (
+                            <Loader />): null}
                         </div>
                     )}
                 </div>
