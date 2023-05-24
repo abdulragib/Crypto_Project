@@ -8,7 +8,7 @@ import Grid from "../Grid";
 import './style.css'
 import List from "../List";
 
-function Tabs({coins}) {
+function Tabs({coins,isWatchlistPage}) {
     const [value, setValue] = useState("grid");
 
     const handleChange = (event, newValue) => {
@@ -45,9 +45,9 @@ function Tabs({coins}) {
                             {/* For Api Error */}
                             {coins.includes("Api Error") ? (
                                 <div className="no-item">
-                                    <h3 style={{color: "var(--white)",textAlign:"center"}}>
+                                    <h3 style={{color: "var(--white)", textAlign: "center"}}>
                                         Network Issue
-                                        <div style={{marginTop:"1rem",height:"auto"}}>
+                                        <div style={{marginTop: "1rem", height: "auto"}}>
                                             Please Try Again Later
                                         </div>
                                     </h3>
@@ -63,9 +63,10 @@ function Tabs({coins}) {
                                 </div>) :
                                 (
                                     coins.map((coin, i) => {
-                                        if(coin)
-                                        {
-                                            return <Grid coin={coin} key={i}/>
+                                        if (coin) {
+                                            return <Grid coin={coin} key={i}
+                                                         delay={(i % 10) * 0.1}
+                                                         isWatchlistPage={isWatchlistPage}/>
                                         }
                                     }))}
                         </div>
@@ -74,9 +75,9 @@ function Tabs({coins}) {
                         {/* For Api Error */}
                         {coins.includes("Api Error") ? (
                             <div className="no-item">
-                                <h3 style={{color: "var(--white)",textAlign:"center"}}>
+                                <h3 style={{color: "var(--white)", textAlign: "center"}}>
                                     Network Issue
-                                    <div style={{marginTop:"1rem",height:"auto"}}>
+                                    <div style={{marginTop: "1rem", height: "auto"}}>
                                         Please Try Again Later
                                     </div>
                                 </h3>
@@ -93,10 +94,12 @@ function Tabs({coins}) {
                             </div>) :
                             (
                                 coins.map((coin, i) => {
-                                   if(coin)
-                                   {
-                                        return <List coin={coin} key={i}/>
-                                   }
+                                    if (coin) {
+                                        return <List
+                                            coin={coin} key={i}
+                                            delay={(i % 10) * 0.1}
+                                            isWatchlistPage={isWatchlistPage}/>
+                                    }
                                 }))}
                     </TabPanel>
                 </TabContext>
