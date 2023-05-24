@@ -46,9 +46,10 @@ const LineChart = ({chartData, priceType, multiAxis}) => {
                     }
                 }
             },
+
             crypto2: {
                 type:'linear',
-                display:true,
+                display:multiAxis,
                 position:'right',
                 ticks: {
                     callback: function (value, index, ticks) {

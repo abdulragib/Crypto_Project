@@ -1,14 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import MenuItem from "@mui/material/MenuItem";
-import {get100Coins} from "../../../functions/get100Coins";
+import { get100Coins } from "../../../functions/get100Coins";
 import Select from '@mui/material/Select';
 import './style.css'
 import Loader from "../../Common/Loader";
 
 
-const SelectCoins = ({crypto1, crypto2,handleCoinChange}) => {
+const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
 
     const [allCoins, setAllCoins] = useState([]);
+    const [apiError, setApiError] = useState(false);
     const styles = {
         height: "2.5rem",
         color: "var(--white)",
@@ -32,35 +33,49 @@ const SelectCoins = ({crypto1, crypto2,handleCoinChange}) => {
     }, []);
 
     async function getData() {
-        const myCoins = await get100Coins();
-        setAllCoins(myCoins)
+        try {
+            const myCoins = await get100Coins();
+            setAllCoins(myCoins);
+        } catch (error) {
+            console.error(error);
+            setApiError(true);
+        }
     }
 
 
     return (
         <div className="coins-flex">
-            {allCoins.length>0 ? (
+            {apiError === false ? (
                 <>
                     <p>Crypto 1</p>
-                <Select
-                    sx={styles}
-                    value={crypto1}
-                    label="Crypto 1"
-                    onChange={(event) => handleCoinChange(event, true)}
-                >
-                    {allCoins.filter((item) => item.id !=crypto2).map((coin,key) => <MenuItem  key={key} value={coin.id}>{coin.name}</MenuItem>)}
-                </Select>
+                    <Select
+                        sx={styles}
+                        value={crypto1}
+                        label="Crypto 1"
+                        onChange={(event) => handleCoinChange(event, true)}
+                    >
+                        {allCoins.filter((item) => item.id != crypto2).map((coin, key) => <MenuItem key={key}
+                                                                                                    value={coin.id}>{coin.name}</MenuItem>)}
+                    </Select>
 
-                <p>Crypto 2</p>
-                <Select
-                sx={styles}
-                value={crypto2}
-                label="Crypto 2"
-                onChange={(event)=>handleCoinChange(event,false)}
-                >
-            {allCoins.filter((item)=>item.id!=crypto1).map((coin,key)=><MenuItem key={key} value={coin.id}>{coin.name}</MenuItem>)}
-                </Select>
-                </>):<Loader/>}
+                    <p>Crypto 2</p>
+                    <Select
+                        sx={styles}
+                        value={crypto2}
+                        label="Crypto 2"
+                        onChange={(event) => handleCoinChange(event, false)}
+                    >
+                        {allCoins.filter((item) => item.id != crypto1).map((coin, key) => <MenuItem key={key}
+                                                                                                    value={coin.id}>{coin.name}</MenuItem>)}
+                    </Select>
+                </>
+            ) : (
+                <div className="api-error">
+                    <p>There was an error fetching the data. Please try again later.</p>
+                </div>
+            )}
+
+            {apiError === false ? null : <Loader />}
         </div>
     );
 };

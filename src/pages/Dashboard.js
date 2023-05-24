@@ -32,13 +32,13 @@ const Dashboard = () => {
 
     const getData = async() => {
         const myCoins=await get100Coins();
-        if(myCoins.length>0)
-        {
+        try{
             setCoins(myCoins);
             setPaginatedCoins(myCoins.slice(0, 10));
             setIsLoading(false);
         }
-        else{
+        catch(error){
+            console.log(error)
             setApiError(true);
             setIsLoading(false)
         }
@@ -47,11 +47,18 @@ const Dashboard = () => {
     // for pagination
     useEffect(() => {
         var previousIndex = (page - 1) * 10;
-        setPaginatedCoins(coins.slice(previousIndex, previousIndex + 10));
+        if(!apiError)
+        {
+            setPaginatedCoins(coins.slice(previousIndex, previousIndex + 10));
+        }
     }, [page, coins]);
 
-    var filteredCoins = coins.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())
-        || item.symbol.toLowerCase().includes(search.toLowerCase()));
+    if(!apiError)
+    {
+        var filteredCoins = coins.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())
+            || item.symbol.toLowerCase().includes(search.toLowerCase()));
+    }
+
 
     return (
         <>

@@ -70,7 +70,7 @@ const Coin = () => {
                     <div className="grey-wrapper">
                         <SelectDays days={days} handleDaysChange={handleDaysChange}/>
                         <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
-                        <LineChart chartData={chartData} priceType={priceType}/>
+                        <LineChart chartData={chartData} priceType={priceType} multiAxis={false}/>
                     </div>
                     <CoinInfo heading={coinData.name} desc={coinData.desc}/>
                 </>
