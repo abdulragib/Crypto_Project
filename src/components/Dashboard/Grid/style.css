@@ -1,10 +1,11 @@
 .grid-container{
-    width:300px;
-    height:auto;
+    width:280px;
     background-color: var(--darkgrey);
     border:2px solid var(--darkgrey);
     border-radius:0.75rem;
     cursor:pointer;
+    padding:1.5rem 1.8rem 2rem 1.6rem;
+    height:auto;
 }
 
 .grid-container:hover{
@@ -21,8 +22,18 @@
     display:flex;
     justify-content: flex-start;
     align-items: center;
+    gap:3rem;
+    margin:1rem;
+}
+
+.info-flex-data{
+    display:flex;
     gap:1rem;
-    margin:1.5rem;
+    width:100%;
+}
+
+.watchlist-btn{
+    padding-left:4rem;
 }
 
 .coin-logo{
@@ -57,7 +68,8 @@
     justify-content: flex-start;
     gap:1rem;
     align-items:center;
-    margin:1rem 1.5rem;
+    margin:1.5rem 1.5rem;
+    width:100%;
 }
 
 .price-chip{
@@ -102,6 +114,7 @@
 
 .info-container{
     margin:1.5rem;
+    width:100%;
 }
 
 .coin-price{

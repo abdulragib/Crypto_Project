@@ -44,6 +44,20 @@
     display:none;
 }
 
+.watchlist-icon {
+    border: 2px solid var(--green);
+    font-size: 1.5rem!important;
+    padding: 0.5rem;
+    color: var(--green);
+    border-radius:50%;
+
+}
+
+.watchlist-icon-red{
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+
 /*.mobile-td-mkt{*/
 /*    display:none;*/
 /*}*/
