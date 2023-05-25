@@ -119,10 +119,11 @@
     .mobile-price
     {
         font-size: 1rem !important;
-        margin-right: auto !important;
-        margin-left: auto !important;
+        margin-right: 1rem !important;
+        margin-left: -1.7rem !important;
         display: block;
     }
+
 
 
     .desktop-td-mkt {
@@ -132,7 +133,7 @@
     .mobile-td-mkt
      {
         display: block;
-        margin-right:-3rem !important;
+        margin-right:-0.5rem !important;
     }
 
 
@@ -143,7 +144,7 @@
     }
 
     .watchlist-icon{
-       margin-right:-8rem;
+       margin-right:-5rem;
         padding:0.3rem;
     }
 }

@@ -64,7 +64,7 @@ const Coin = () => {
             <Header/>
             {isLoading ? <Loader/> :
                 <>
-                    <div className="grey-wrapper" style={{padding: "0rem 1rem"}}>
+                    <div className="grey-wrapper grey-wrapper-compare-list-mb" style={{padding: "0rem 1rem"}}>
                         <List coin={coinData}/>
                     </div>
                     <div className="grey-wrapper">

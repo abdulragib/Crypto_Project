@@ -143,9 +143,13 @@ img{
 
 .grey-wrapper-compare-list-mb{
   padding:0 0 !important;
-  padding-right:5.3rem !important;
-  margin-left:0.39rem !important;
+  padding-right:4.2rem !important;
+  margin-left:0.8rem !important;
 }
 
+.price-chip{
+    font-size:1rem !important;
+    margin-left:-1.3rem;
+}
 
 }
