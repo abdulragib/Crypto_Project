@@ -107,11 +107,11 @@ const Compare = () => {
                         <SelectCoins crypto1={crypto1} crypto2={crypto2} handleCoinChange={handleCoinChange}/>
                         <SelectDays days={days} handleDaysChange={handleDaysChange} noPTag={true}/>
                     </div>
-                    <div className="grey-wrapper" style={{padding: "0rem 1rem"}}>
+                    <div className="grey-wrapper grey-wrapper-compare-list-mb coin-info-mb" style={{padding: "0rem 1rem"}}>
                         <List coin={crypto1Data}/>
                     </div>
 
-                    <div className="grey-wrapper" style={{padding: "0rem 1rem"}}>
+                    <div className="grey-wrapper grey-wrapper-compare-list-mb" style={{padding: "0rem 1rem"}}>
                         <List coin={crypto2Data}/>
                     </div>
 
