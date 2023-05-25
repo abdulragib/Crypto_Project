@@ -105,7 +105,10 @@ const Compare = () => {
                 <>
                     <div className="coins-days-flex">
                         <SelectCoins crypto1={crypto1} crypto2={crypto2} handleCoinChange={handleCoinChange}/>
-                        <SelectDays days={days} handleDaysChange={handleDaysChange} noPTag={true}/>
+                        <div className="days-wrapper">
+                            <span className="select-days-title">Days:</span>
+                            <SelectDays days={days} handleDaysChange={handleDaysChange} noPTag={true}/>
+                        </div>
                     </div>
                     <div className="grey-wrapper grey-wrapper-compare-list-mb" style={{padding: "0rem 1rem"}}>
                         <List coin={crypto1Data}/>

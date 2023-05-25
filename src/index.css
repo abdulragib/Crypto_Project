@@ -115,6 +115,12 @@ img{
   transition: all 400ms ease-out;
 }
 
+.days-wrapper {
+  display: flex;
+  align-items: center; /* centers the child elements vertically */
+  gap:2rem;
+}
+
 /*compare page*/
 @media only screen and (max-width: 600px) {
   .cursor-pointer,
@@ -147,9 +153,22 @@ img{
   margin-left:0.8rem !important;
 }
 
+/*List page*/
 .price-chip{
     font-size:1rem !important;
     margin-left:-1.3rem;
 }
+
+  .select-days-title{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+  }
+
+  .days-wrapper {
+
+    margin-left: 1.4rem !important; /* sets the margin-right value for mobile devices */
+  }
 
 }
