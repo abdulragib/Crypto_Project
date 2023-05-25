@@ -30,7 +30,7 @@ function Watchlist() {
     return (
         <div>
             { (
-                <div style={{ minHeight: "90vh" }}>
+                <div style={{ minHeight: "90vh", }}>
                     {myWatchlist?.length === 0 || !coins ? (
                         <div>
                             <Header />
@@ -47,7 +47,7 @@ function Watchlist() {
                         <div style={{ height: "95vh" }}>
                             <Header />
                             <Tabs coins={myWatchlist} isWatchlistPage={true} />
-                            {loading || !coins ? (
+                            {loading && !coins ? (
                                 <Loader />): null}
                             <Footer marginTop={"30rem"}/>
                         </div>
