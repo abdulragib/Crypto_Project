@@ -61,7 +61,7 @@
     .drawer-div{
         width:40vw;
         background-color:var(--black);
-        height:100vh;
+        height:100%;
         padding:1.5rem;
     }
 

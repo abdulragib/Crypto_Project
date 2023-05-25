@@ -74,7 +74,7 @@ const Dashboard = () => {
                     </div>
                 )
             }
-            <Footer marginTop={"15rem"}/>
+            <Footer marginTop={"3rem"}/>
         </>
     )
 }
