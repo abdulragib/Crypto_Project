@@ -4,6 +4,7 @@ import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
 import Tabs from "../components/Dashboard/Tabs";
 import { get100Coins } from "../functions/get100Coins";
+import Footer from "../components/Common/Footer";
 function Watchlist() {
     const coins = JSON.parse(localStorage.getItem("watchlist"));
     const [myWatchlist, setMyWatchlist] = useState([]);
@@ -46,6 +47,7 @@ function Watchlist() {
                         <div style={{ height: "95vh" }}>
                             <Header />
                             <Tabs coins={myWatchlist} isWatchlistPage={true} />
+                            <Footer marginTop={"31rem"}/>
                             {loading || !coins ? (
                             <Loader />): null}
                         </div>

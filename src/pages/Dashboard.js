@@ -7,6 +7,7 @@ import PaginationComponent from "../components/Dashboard/Pagination";
 import Loader from "../components/Common/Loader";
 import BackToTop from "../components/Common/BackToTop";
 import {get100Coins} from "../functions/get100Coins";
+import Footer from "../components/Common/Footer";
 
 const Dashboard = () => {
     const [coins, setCoins] = useState([]);
@@ -73,6 +74,7 @@ const Dashboard = () => {
                     </div>
                 )
             }
+            <Footer marginTop={"15rem"}/>
         </>
     )
 }

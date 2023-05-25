@@ -5,8 +5,8 @@ import Button from "../../Common/Button";
 import iphone from "../../../assets/iphone.png"
 import gradient from "../../../assets/gradient.png"
 import {motion} from 'framer-motion'
-import {Link} from "react-router-dom";
 import {RWebShare} from "react-web-share";
+import Footer from "../../Common/Footer";
 
 const MainComponent = () => {
     const navigate = useNavigate();

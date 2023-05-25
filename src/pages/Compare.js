@@ -12,6 +12,7 @@ import {settingChartData} from "../functions/settingChartData";
 import LineChart from "../components/Coin/LineChart";
 import PriceType from "../components/Coin/PriceType";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 
 const Compare = () => {
@@ -124,6 +125,7 @@ const Compare = () => {
                     </div>
                     <CoinInfo className="coin-info-mb" heading={crypto1Data.name} desc={crypto1Data.desc}/>
                     <CoinInfo className="coin-info-mb" heading={crypto2Data.name} desc={crypto2Data.desc}/>
+                    <Footer marginTop={"3rem"}/>
                 </>
             )}
 

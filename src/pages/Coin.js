@@ -11,6 +11,7 @@ import LineChart from "../components/Coin/LineChart";
 import SelectDays from "../components/Coin/SelectDays";
 import {settingChartData} from "../functions/settingChartData";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 const Coin = () => {
     const {id} = useParams();
@@ -73,6 +74,7 @@ const Coin = () => {
                         <LineChart chartData={chartData} priceType={priceType} multiAxis={false}/>
                     </div>
                     <CoinInfo heading={coinData.name} desc={coinData.desc}/>
+                    <Footer marginTop={"3rem"}/>
                 </>
             }
         </div>
