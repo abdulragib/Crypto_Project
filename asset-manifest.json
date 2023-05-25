@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Crypto_Project/static/css/main.dbbef6b4.css",
+    "main.js": "/Crypto_Project/static/js/main.8eb34948.js",
+    "static/media/iphone.png": "/Crypto_Project/static/media/iphone.50f6a45ca9bd3b3de3b7.png",
+    "static/media/gradient.png": "/Crypto_Project/static/media/gradient.12a666ed10b3b442b534.png",
+    "index.html": "/Crypto_Project/index.html",
+    "main.dbbef6b4.css.map": "/Crypto_Project/static/css/main.dbbef6b4.css.map",
+    "main.8eb34948.js.map": "/Crypto_Project/static/js/main.8eb34948.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbbef6b4.css",
+    "static/js/main.8eb34948.js"
+  ]
+}
