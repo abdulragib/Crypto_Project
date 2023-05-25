@@ -3,26 +3,27 @@ import './style.css';
 import TemporaryDrawer from './drawer';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast} from 'react-toastify';
 import { Switch } from '@mui/material';
 
 const Header = () => {
-
-    const [darkMode, setDarkMode] = useState(localStorage.getItem('theme') === 'dark');
+    const [darkMode, setDarkMode] = useState(
+        localStorage.getItem("theme") == "dark" ? true : false
+    );
 
     useEffect(() => {
-        if (darkMode) {
+        if (localStorage.getItem("theme") == "dark") {
             setDark();
         } else {
             setLight();
         }
-    }, [darkMode]);
+    }, []);
 
     const changeMode = () => {
         setDarkMode(!darkMode);
-        toast.success('Theme Changed!');
-        const mode = localStorage.getItem('theme');
-        if (mode === 'dark') {
+        toast.success("Theme Changed!");
+        const mode = localStorage.getItem("theme");
+        if (mode == "dark") {
             setLight();
         } else {
             setDark();
@@ -30,15 +31,14 @@ const Header = () => {
     };
 
     const setDark = () => {
-        localStorage.setItem('theme', 'dark');
-        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem("theme", "dark");
+        document.documentElement.setAttribute("data-theme", "dark");
     };
 
     const setLight = () => {
-        localStorage.setItem('theme', 'light');
-        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem("theme", "light");
+        document.documentElement.setAttribute("data-theme", "light");
     };
-
     return (
         <div className='navbar'>
             <h1 className='logo'>
@@ -56,7 +56,7 @@ const Header = () => {
                     <p className='link'>Watchlist</p>
                 </Link>
                 <Link to='/dashboard'>
-                    <Button text={'Dashboard'} onClick={() => console.log('Btn Clicked')} />
+                    <Button text={'Dashboard'} onClick={(e) => { e.preventDefault(); console.log('Btn Clicked')}} />
                 </Link>
             </div>
             <div className='mobile-drawer'>
