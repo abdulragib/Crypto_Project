@@ -5,7 +5,7 @@ const CoinInfo = ({heading,desc}) => {
     const longDesc=desc + "<p style='color:var(--grey)'> Read Less...</p>";
     const [flag,setFlag]=useState(true);
     return (
-        <div className="grey-wrapper" style={{padding: "0rem 1rem"}}>
+        <div className="grey-wrapper grey-wrapper-info-mb" style={{padding: "0rem 1rem"}}>
             <h2 className="coin-info-heading">{heading}</h2>
             {desc.length>200 ? <p onClick={()=>setFlag(!flag)}
                 className="coin-info-desc"

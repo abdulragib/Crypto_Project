@@ -115,10 +115,30 @@ img{
   transition: all 400ms ease-out;
 }
 
-
+/*compare page*/
 @media only screen and (max-width: 600px) {
   .cursor-pointer,
   .cursor {
     display: none;
   }
+
+    .coins-days-flex{
+        flex-direction:column;
+        gap:1rem;
+      width:100%;
+      align-items:flex-start;
+    }
+
+    .grey-wrapper{
+        width:100%;
+      padding: 1rem 2rem;
+      margin: 1.5rem 0.8rem;
+    }
+
+.coin-info-mb{
+  padding: 0 0 !important;
+}
+
+
+
 }

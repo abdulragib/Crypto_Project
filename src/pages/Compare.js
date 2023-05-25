@@ -119,8 +119,8 @@ const Compare = () => {
                         <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
                         <LineChart chartData={chartData} priceType={priceType} multiAxis={true}/>
                     </div>
-                    <CoinInfo heading={crypto1Data.name} desc={crypto1Data.desc}/>
-                    <CoinInfo heading={crypto2Data.name} desc={crypto2Data.desc}/>
+                    <CoinInfo className="coin-info-mb" heading={crypto1Data.name} desc={crypto1Data.desc}/>
+                    <CoinInfo className="coin-info-mb" heading={crypto2Data.name} desc={crypto2Data.desc}/>
                 </>
             )}
 
