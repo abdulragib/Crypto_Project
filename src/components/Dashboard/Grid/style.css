@@ -149,6 +149,13 @@
       padding: 0;
       margin-left:-4rem;
   }
+
+    .grid-price-chip{
+        display:block !important;
+        width:1rem !important;
+        padding:0.35rem 0.5rem !important;
+        margin-left:0.1rem;
+    }
 }
 
 

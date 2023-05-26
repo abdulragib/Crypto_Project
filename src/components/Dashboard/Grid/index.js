@@ -63,13 +63,13 @@ function Grid({coin, delay, isWatchlistPage}) {
                 {coin.price_change_percentage_24h > 0
                     ? (
                         <div className="chip-flex">
-                            <div className="price-chip">{coin.price_change_percentage_24h.toFixed(2)}%</div>
+                            <div className="price-chip grid-price-chip">{coin.price_change_percentage_24h.toFixed(2)}%</div>
                             <div className="icon-chip"><TrendingUpIcon/></div>
                         </div>
                     )
                     : (
                         <div className="chip-flex">
-                            <div className="price-chip chip-red">{coin.price_change_percentage_24h.toFixed(2)}%</div>
+                            <div className="price-chip chip-red grid-price-chip">{coin.price_change_percentage_24h.toFixed(2)}%</div>
                             <div className="icon-chip chip-red"><TrendingDownIcon/></div>
                         </div>
                     )}

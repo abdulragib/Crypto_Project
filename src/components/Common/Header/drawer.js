@@ -1,14 +1,50 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import Drawer from '@mui/material/Drawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import {IconButton} from "@mui/material";
+import {IconButton, Switch} from "@mui/material";
 import {Link} from "react-router-dom";
+import {toast,ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function TemporaryDrawer() {
     const [open, setOpen] = useState(false);
 
+    const [darkMode, setDarkMode] = useState(
+        localStorage.getItem("theme") === "dark"
+    );
+
+    useEffect(() => {
+        if (localStorage.getItem("theme") === "dark") {
+            setDark();
+        } else {
+            setLight();
+        }
+    }, []);
+
+    const changeMode = () => {
+        setDarkMode(!darkMode);
+        toast.success("Theme Changed!");
+        const mode = localStorage.getItem("theme");
+        if (mode === "dark") {
+            setLight();
+        } else {
+            setDark();
+        }
+    };
+
+    const setDark = () => {
+        localStorage.setItem("theme", "dark");
+        document.documentElement.setAttribute("data-theme", "dark");
+    };
+
+    const setLight = () => {
+        localStorage.setItem("theme", "light");
+        document.documentElement.setAttribute("data-theme", "light");
+    };
+
     return (
         <div>
+            <ToastContainer/>
             <IconButton onClick={() => setOpen(true)}>
                 <MenuRoundedIcon className="link"/>
             </IconButton>
@@ -30,8 +66,11 @@ export default function TemporaryDrawer() {
                     <Link to="/dashboard">
                         <p className="link">Dashboard</p>
                     </Link>
+                    <div className="dark-light-mode">
+                    {darkMode?(<p className="link">Dark Mode </p>): (<p className="link">Light Mode</p>)} <Switch checked={darkMode} onChange={changeMode} /></div>
                 </div>
             </Drawer>
+
         </div>
     );
 }
