@@ -124,9 +124,17 @@ img{
   transition: all 400ms ease-out;
 }
 
+.coins-days-flex{
+  margin-top:5rem;
+  display:flex;
+  align-items: center;
+  margin-left:3rem;
+}
+
 .days-wrapper {
   display: flex;
   align-items: center; /* centers the child elements vertically */
+  margin-top:4rem;
   gap:1.5rem;
 }
 
@@ -139,7 +147,7 @@ img{
 
     .coins-days-flex{
       flex-direction:column;
-      gap:1rem;
+      gap:0rem;
       align-items:flex-start;
       margin-left:0.5rem;
       font-size:1rem;
@@ -180,7 +188,8 @@ img{
   }
 
   .days-wrapper {
-    margin-left: 0.1rem !important; /* sets the margin-right value for mobile devices */
+    margin-left: 0.1rem !important;
+    margin-top:2rem;
   }
 
   .list-table-row{
