@@ -156,12 +156,12 @@
     .iphone {
         top: 7rem;
         width: 45%;
-        left:-15%;
+        left:-10%;
     }
 
     .gradient{
         top:13rem;
-        left:-3%;
+        left:1%;
         width:35%;
     }
 }
