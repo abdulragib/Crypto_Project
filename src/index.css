@@ -118,7 +118,7 @@ img{
 .days-wrapper {
   display: flex;
   align-items: center; /* centers the child elements vertically */
-  gap:2rem;
+  gap:1.5rem;
 }
 
 /*compare page*/
@@ -138,8 +138,7 @@ img{
     }
 
     .grey-wrapper{
-      width:100%;
-      padding: 1rem 2rem;
+      width:85%;
       margin: 1.5rem 0.8rem;
     }
 
@@ -149,7 +148,7 @@ img{
 
 .grey-wrapper-compare-list-mb{
   padding:0 0 !important;
-  padding-right:4.2rem !important;
+  padding-right:2.3rem !important;
   margin-left:0.8rem !important;
 }
 
@@ -167,8 +166,7 @@ img{
   }
 
   .days-wrapper {
-
-    margin-left: 1.4rem !important; /* sets the margin-right value for mobile devices */
+    margin-left: 0.1rem !important; /* sets the margin-right value for mobile devices */
   }
 
 }

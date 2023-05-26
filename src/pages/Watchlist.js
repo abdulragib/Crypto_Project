@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom";
 import Button from "../components/Common/Button";
 import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
@@ -10,6 +11,7 @@ function Watchlist() {
     const [myWatchlist, setMyWatchlist] = useState([]);
     const [loading, setLoading] = useState(true);
 
+   const navigate = useNavigate();
     useEffect(() => {
         getData();
     }, []);
@@ -38,9 +40,7 @@ function Watchlist() {
                                 No Items in the Watchlist
                             </h1>
                             <div style={{ display: "flex", justifyContent: "center" }}>
-                                <a href="/dashboard">
-                                    <Button text={"Dashboard"} />
-                                </a>
+                                    <Button text={"Dashboard"} onClick={()=>navigate('/dashboard')}/>
                             </div>
                         </div>
                     ) : (

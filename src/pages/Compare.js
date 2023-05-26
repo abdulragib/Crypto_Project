@@ -100,7 +100,7 @@ const Compare = () => {
     };
 
     return (
-        <div>
+        <div style={{overflowX:"hidden"}}>
             <Header/>
             {isLoading ? <Loader/> : (
                 <>

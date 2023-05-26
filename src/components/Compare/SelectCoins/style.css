@@ -2,13 +2,20 @@
     display:flex;
     justify-content: flex-start;
     align-items:center;
-    gap:1.5rem;
-    margin:1.5rem;
+    gap:0.1rem;
+    margin:0.2rem;
 }
 
 @media only screen and (max-width: 768px){
     .coins-flex>p{
        width:4.5rem;
+    }
 
+    .coins-flex>:nth-child(3){
+        margin-left:0.5rem;
+    }
+
+    .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+        padding: 1rem 0rem 1rem 0.5rem;
     }
 }

@@ -5,7 +5,7 @@ import Footer from "../components/Common/Footer";
 
 const Home = () => {
     return (
-        <div>
+        <div style={{overflowX:"hidden"}}>
             <Header/>
             <MainComponent/>
             <Footer/>

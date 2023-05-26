@@ -53,10 +53,10 @@
     .footer {
         margin: 1.5rem 0.5rem;
         margin-bottom: 2rem;
-        margin-left: 5% !important;
-        margin-right: 10% !important;
+        /* margin-left: 10% !important; */
+        margin-right: 3% !important;
         margin-top: 45rem;
-        width: 100% !important;
+        /* width: 100% !important; */
         align-items: center !important;
     }
 
@@ -67,15 +67,11 @@
     .footer {
         margin: 1.5rem 0.5rem;
         margin-bottom: 2rem;
-        margin-left:10% !important;
+
         margin-right:3% !important;
         margin-top:45rem;
-        width:100% !important;
-        align-items: center !important;
-    }
 
-    .flex-info{
-        width:100% !important;
+        align-items: center !important;
     }
 
     .footer h2 {

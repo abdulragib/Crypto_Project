@@ -94,22 +94,17 @@
     .list-row {
         gap: 1rem !important;
         margin: 0.3rem !important;
-        padding: 0.3rem !important;
     }
 
     .td-image {
         margin-right: 0.5rem;
     }
     .list-row {
-        margin-top: 1rem;
-        width: 100%;
         gap: 0rem !important;
-        padding: 0rem;
     }
 
     .price-chip{
-        padding:0.4rem 0.3rem;
-        font-size:0.9rem;
+        display:none;
     }
 
     .coin-price {
@@ -120,7 +115,7 @@
     {
         font-size: 1rem !important;
         margin-right: 1rem !important;
-        margin-left: -1.7rem !important;
+        margin-left: -3.7rem !important;
         display: block;
     }
 

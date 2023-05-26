@@ -41,7 +41,8 @@
 @media only screen and (max-width:800px){
 
     .navbar{
-        width:100% !important;
+        padding:1.5rem 1rem;
+
     }
 
     .logo{

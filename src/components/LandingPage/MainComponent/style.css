@@ -109,7 +109,6 @@
         right:6rem;
         top:10rem;
         width:45%;
-
     }
 
     .gradient{
@@ -150,18 +149,18 @@
     .flex-info{
         justify-content: center;
         align-items: center;
-        width:100%;
+
     }
 
     .iphone {
         top: 7rem;
         width: 45%;
-        left:-15%;
+        left:-25%;
     }
 
     .gradient{
         top:13rem;
-        left:10%;
+        left:1%;
         width:35%;
     }
 }
