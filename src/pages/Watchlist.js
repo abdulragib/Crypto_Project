@@ -32,7 +32,7 @@ function Watchlist() {
     return (
         <div style={{ overflowX:"hidden"}}>
             { (
-                <div style={{ minHeight: "90vh"}}>
+                <div style={{ minHeight: "90vh",paddingTop:"5rem"}}>
                     {myWatchlist?.length === 0 || !coins ? (
                         <div>
                             <Header />
@@ -44,7 +44,7 @@ function Watchlist() {
                             </div>
                         </div>
                     ) : (
-                        <div style={{ paddingBottom:"5rem"}}>
+                        <div style={{ paddingBottom:"0.5rem"}}>
                             <Header />
                             <Tabs coins={myWatchlist} isWatchlistPage={true} />
                             {loading && !coins ? (
