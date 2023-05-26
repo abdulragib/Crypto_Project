@@ -61,7 +61,7 @@ const Dashboard = () => {
 
 
     return (
-        <>
+        <div style={{paddingBottom:"0.5rem"}}>
             <Header/>
             <BackToTop/>
             {isLoading ? <Loader/> :
@@ -73,8 +73,8 @@ const Dashboard = () => {
                     </div>
                 )
             }
-            <Footer marginTop={"3rem"}/>
-        </>
+            <Footer marginTop={"2rem"}/>
+        </div>
     )
 }
 

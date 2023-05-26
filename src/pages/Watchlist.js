@@ -44,7 +44,7 @@ function Watchlist() {
                             </div>
                         </div>
                     ) : (
-                        <div style={{ height: "95vh" }}>
+                        <div style={{ paddingBottom:"0.5rem"}}>
                             <Header />
                             <Tabs coins={myWatchlist} isWatchlistPage={true} />
                             {loading && !coins ? (
