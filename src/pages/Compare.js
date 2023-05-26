@@ -119,7 +119,7 @@ const Compare = () => {
                         <List coin={crypto2Data}/>
                     </div>
 
-                    <div className="grey-wrapper">
+                    <div className="grey-wrapper compare-chart-mb">
                         <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
                         <LineChart chartData={chartData} priceType={priceType} multiAxis={true}/>
                     </div>

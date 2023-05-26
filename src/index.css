@@ -29,6 +29,14 @@ html{
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 body{
   margin:0;
   -webkit-font-smoothing: antialiased;
@@ -80,6 +88,7 @@ img{
   border-radius:0.8rem;
   padding:1rem 1rem;
 }
+
 
 .coins-days-flex{
   display:flex;
@@ -137,6 +146,9 @@ img{
       font-weight: 700;
     }
 
+  .list-header-flex{
+    margin-top:5rem !important;
+  }
     .grey-wrapper{
       width:85%;
       margin: 1.5rem 0.8rem;
@@ -158,6 +170,8 @@ img{
     margin-left:-1.3rem;
 }
 
+
+
   .select-days-title{
     display:flex;
     justify-content: center;
@@ -167,6 +181,10 @@ img{
 
   .days-wrapper {
     margin-left: 0.1rem !important; /* sets the margin-right value for mobile devices */
+  }
+
+  .list-table-row{
+    width:90% !important;
   }
 
 }

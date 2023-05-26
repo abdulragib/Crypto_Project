@@ -25,6 +25,12 @@
 
 @media only screen and (max-width:800px){
 
+    .no-item{
+        margin: 0;
+        position:relative;
+        left:-2rem!important;
+    }
+
     .grid-flex{
         width: 100% !important;
     }
@@ -36,5 +42,12 @@
     .tabPanel{
         padding:0.2rem !important;
         width:100% !important;
+    }
+
+    .list-no-item{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        left: 0.8rem !important;
     }
 }

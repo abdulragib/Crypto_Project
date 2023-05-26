@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
     padding:0.5rem 3rem;
+    margin-top:6rem;
 }
 
 .track-crypto-heading,.real-time-heading{
@@ -126,7 +127,7 @@
 
 @media only screen and (max-width:600px) {
     .track-crypto-heading,.real-time-heading{
-        font-size:3rem;
+        font-size:2.7rem;
         margin:0;
         text-align: center;
     }
@@ -149,18 +150,18 @@
     .flex-info{
         justify-content: center;
         align-items: center;
-
+        padding:0;
     }
 
     .iphone {
         top: 7rem;
         width: 45%;
-        left:-25%;
+        left:-15%;
     }
 
     .gradient{
         top:13rem;
-        left:1%;
+        left:-3%;
         width:35%;
     }
 }

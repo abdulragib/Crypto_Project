@@ -2,7 +2,6 @@ import Header from "../components/Common/Header";
 import Tabs from "../components/Dashboard/Tabs";
 import Search from "../components/Dashboard/Search";
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 import PaginationComponent from "../components/Dashboard/Pagination";
 import Loader from "../components/Common/Loader";
 import BackToTop from "../components/Common/BackToTop";
@@ -67,7 +66,7 @@ const Dashboard = () => {
             <BackToTop/>
             {isLoading ? <Loader/> :
                 (
-                    <div>
+                    <div style={{overflowX:"hidden"}}>
                         <Search search={search} onSearchChange={onSearchChange}/>
                         <Tabs coins={search ? filteredCoins : (apiError ? ["Api Error"] : paginatedCoins)}/>
                         {!search && !apiError && <PaginationComponent page={page} handlePageChange={handlePageChange}/>}

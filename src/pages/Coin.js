@@ -64,7 +64,7 @@ const Coin = () => {
         <div>
             <Header/>
             {isLoading ? <Loader/> :
-                <>
+                <div className="list-header-flex">
                     <div className="grey-wrapper grey-wrapper-compare-list-mb" style={{padding: "0rem 1rem"}}>
                         <List coin={coinData}/>
                     </div>
@@ -75,7 +75,7 @@ const Coin = () => {
                     </div>
                     <CoinInfo heading={coinData.name} desc={coinData.desc}/>
                     <Footer marginTop={"3rem"}/>
-                </>
+                </div>
             }
         </div>
     )

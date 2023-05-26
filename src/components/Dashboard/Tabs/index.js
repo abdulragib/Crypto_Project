@@ -74,7 +74,7 @@ function Tabs({coins,isWatchlistPage}) {
                     <TabPanel value="list" variant="fullWidth" className="tabPanel">
                         {/* For Api Error */}
                         {coins?.includes("Api Error") ? (
-                            <div className="no-item">
+                            <div className="no-item list-no-item">
                                 <h3 style={{color: "var(--white)", textAlign: "center"}}>
                                     Network Issue
                                     <div style={{marginTop: "1rem", height: "auto"}}>
