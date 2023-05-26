@@ -6,6 +6,8 @@ import Dashboard from './pages/Dashboard';
 import Coin from './pages/Coin';
 import Compare from './pages/Compare';
 import Watchlist from './pages/Watchlist';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
     useEffect(() => {
@@ -36,6 +38,7 @@ function App() {
 
     return (
         <div className='App'>
+            <ToastContainer />
             <div className='cursor' id='cursor' />
             <div className='cursor-pointer' id='cursor-pointer' />
             <BrowserRouter>

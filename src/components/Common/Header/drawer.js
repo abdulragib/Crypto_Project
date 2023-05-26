@@ -3,8 +3,7 @@ import Drawer from '@mui/material/Drawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import {IconButton, Switch} from "@mui/material";
 import {Link} from "react-router-dom";
-import {toast,ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {toast} from "react-toastify";
 
 export default function TemporaryDrawer() {
     const [open, setOpen] = useState(false);
@@ -44,7 +43,6 @@ export default function TemporaryDrawer() {
 
     return (
         <div>
-            <ToastContainer/>
             <IconButton onClick={() => setOpen(true)}>
                 <MenuRoundedIcon className="link"/>
             </IconButton>

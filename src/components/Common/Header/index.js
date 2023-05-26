@@ -3,8 +3,8 @@ import './style.css';
 import TemporaryDrawer from './drawer';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
-import { toast} from 'react-toastify';
 import { Switch } from '@mui/material';
+import {toast} from "react-toastify";
 
 const Header = () => {
     const [darkMode, setDarkMode] = useState(

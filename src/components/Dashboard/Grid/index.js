@@ -15,6 +15,7 @@ function Grid({coin, delay, isWatchlistPage}) {
     const [added, setAdded] = useState(hasBeenAdded(coin.id));
     return (
         <Link to={`/coin/${coin.id}`}>
+
             <motion.div initial={{opacity: 0, y: 50}}
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 0.5, delay: delay}}
@@ -37,6 +38,7 @@ function Grid({coin, delay, isWatchlistPage}) {
                                 setAdded(false);
                             } else {
                                 addToWatchlist(coin.id);
+
                                 setAdded(true);
                             }
                         }}
