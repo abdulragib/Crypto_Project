@@ -8,8 +8,10 @@
     background-color:var(--darkgrey);
     width:80%;
     margin: 1rem auto;
+    margin-top:7rem;
     border-radius:3rem;
     font-size:1.2rem;
+
 }
 
 .search-flex input{
