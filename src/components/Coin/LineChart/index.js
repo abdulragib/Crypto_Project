@@ -10,7 +10,7 @@ import {
     LineElement,
     PointElement,
     Title,
-    Tooltip
+    Tooltip,
 } from 'chart.js';
 
 ChartJs.register(

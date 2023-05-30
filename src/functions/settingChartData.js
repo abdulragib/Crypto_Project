@@ -32,7 +32,8 @@ export const settingChartData=(setChartData,prices1,prices2)=>{
                 data: prices1.map((price)=> (price[1])),
                 borderColor: "#3a80e9",
                 tension:0.25,
-                fill:false,
+                fill:true,
+                backgroundColor: "rgba(58, 128, 233, 0.1)",
                 borderWidth:2,
                 pointRadius:0,
                 yAxisID:"crypto1"
